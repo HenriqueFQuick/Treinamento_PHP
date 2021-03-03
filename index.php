@@ -3,7 +3,7 @@
 //hmendes
 
 //Questão 1
-function mean($numbers)
+function mean(...$numbers)
 {
     $count = count($numbers);
     $sum = 0;
@@ -139,20 +139,17 @@ function dayOfWeek($number)
 }
 
 //Questao 7
-function definirTriangulo($lados)
+function definirTriangulo($lado1, $lado2, $lado3)
 {
-    if ($lados[0] <= 0 || $lados[1] <= 0 || $lados[2] <= 0) {
+    if ($lado1 <= 0 || $lado2 <= 0 || $lado3 <= 0) {
         echo "Não é um triângulo";
-    } elseif ($lados[0] + $lados[1] > $lados[2]
-        || $lados[0] + $lados[2] > $lados[1]
-        || $lados[1] + $lados[2] > $lados[3]
-        || $lados[1] + $lados[3] > $lados[2]
-        || $lados[3] + $lados[1] > $lados[2]
-        || $lados[3] + $lados[2] > $lados[1]
+    } elseif ($lado1 + $lado2 > $lado3
+        || $lado1 + $lado3 > $lado2
+        || $lado2 + $lado3 > $lado1
     ) {
-        if ($lados[0] == $lados[1] && $lados[1] == $lados[2]) {
+        if ($lado1 == $lado2 && $lado2 == $lado3) {
             echo "É Equilátero";
-        } elseif ($lados[0] != $lados[1] && $lados[1] != $lados[2]) {
+        } elseif ($lado1 != $lado2 && $lado2 != $lado3) {
             echo "É Escaleno";
         } else {
             echo "É Isósceles";
